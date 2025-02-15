@@ -1,12 +1,14 @@
 import React from "react";
 import Header from "../components/customer/Header";
-import HomePage from "../pages/customer/HomePage";
+import HomePageCus from "../pages/customer/HomePage";
+import { Outlet } from "react-router";
 
 const LayoutCustomer = () => {
   return (
     <div>
       <Header />
-      <HomePage />
+      {/* <HomePage /> */}
+      <Outlet />
     </div>
   );
 };

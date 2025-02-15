@@ -1,21 +1,10 @@
 import React from "react";
-import hinh2 from "../../assets/hinh2.png";
 import hinh4 from "../../assets/hinh4.png";
-import {
-  FaArrowRight,
-  FaChartBar,
-  FaChartLine,
-  FaEye,
-  FaPlus,
-  FaShareAlt,
-} from "react-icons/fa";
-import { MdGroups3 } from "react-icons/md";
-import { FaUserDoctor } from "react-icons/fa6";
-import { PiBellSimpleZFill } from "react-icons/pi";
-import { TiTick } from "react-icons/ti";
+import { FaArrowRight, FaEye, FaPlus } from "react-icons/fa";
 import { SlNote } from "react-icons/sl";
 import { CiSearch } from "react-icons/ci";
 import { GrUpdate } from "react-icons/gr";
+import { Link } from "react-router";
 const HomePage = () => {
   return (
     <div className="mt-2">
@@ -76,11 +65,13 @@ const HomePage = () => {
                 <p>9 tháng tuổi</p>
               </li>
             </ul>
-            <div className="flex justify-between">
-              <button className="flex items-center gap-2 text-blue-500">
-                <FaEye />
-                Xem chi tiết
-              </button>
+            <div className="flex justify-between pt-3">
+              <Link to={"/customer/child-records"}>
+                <button className="flex items-center gap-2 text-blue-500">
+                  <FaEye />
+                  Xem chi tiết
+                </button>
+              </Link>
               <button className="flex items-center gap-2">
                 <SlNote />
                 Chỉnh sữa
@@ -105,11 +96,14 @@ const HomePage = () => {
                 <p>9 tháng tuổi</p>
               </li>
             </ul>
-            <div className="flex justify-between">
-              <button className="flex items-center gap-2 text-blue-500">
-                <FaEye />
-                Xem chi tiết
-              </button>
+            <div className="flex justify-between pt-3">
+              <Link to={"/customer/child-records"}>
+                {" "}
+                <button className="flex items-center gap-2 text-blue-500">
+                  <FaEye />
+                  Xem chi tiết
+                </button>
+              </Link>
               <button className="flex items-center gap-2">
                 <SlNote />
                 Chỉnh sữa
@@ -134,11 +128,13 @@ const HomePage = () => {
                 <p>9 tháng tuổi</p>
               </li>
             </ul>
-            <div className="flex justify-between">
-              <button className="flex items-center gap-2 text-blue-500">
-                <FaEye />
-                Xem chi tiết
-              </button>
+            <div className="flex justify-between pt-3">
+              <Link to={"/customer/child-records"}>
+                <button className="flex items-center gap-2 text-blue-500">
+                  <FaEye />
+                  Xem chi tiết
+                </button>
+              </Link>
               <button className="flex items-center gap-2">
                 <SlNote />
                 Chỉnh sữa
@@ -152,10 +148,12 @@ const HomePage = () => {
       <div className="p-10 text-center">
         <div className="inline-flex items-center gap-20 pb-10">
           <p className="text-2xl font-bold">Yêu câu tư vấn</p>
-          <button className="flex items-center gap-2 rounded-xl bg-blue-500 p-2 text-white">
-            <GrUpdate />
-            Lịch sử tư vấn
-          </button>
+          <Link to={"/customer/advisory"}>
+            <button className="flex items-center gap-2 rounded-xl bg-blue-500 p-2 text-white">
+              <GrUpdate />
+              Lịch sử tư vấn
+            </button>
+          </Link>
         </div>
 
         <div className="">
@@ -180,7 +178,7 @@ const HomePage = () => {
               </label>
               <textarea
                 type="text"
-                className="w-full min-h-28 resize-none rounded-lg border border-gray-300 p-2"
+                className="min-h-28 w-full resize-none rounded-lg border border-gray-300 p-2"
                 id="vanDe"
               />
             </div>

@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import hinh2 from "../../assets/hinh2.png";
 import hinh4 from "../../assets/hinh4.png";
 import {
@@ -16,7 +18,16 @@ import { TiTick } from "react-icons/ti";
 import { SlNote } from "react-icons/sl";
 import { CiSearch } from "react-icons/ci";
 import { GrUpdate } from "react-icons/gr";
-const HomePage = () => {
+
+const HomePageCus = () => {
+  const navigate = useNavigate();
+
+  const handleAddNewChild = () => {
+    console.log("Navigating..");
+
+    navigate("/customer/addNewChild");
+  };
+
   return (
     <div className="mt-2">
       <div className="bg-sky-100 px-15 py-5">
@@ -52,7 +63,10 @@ const HomePage = () => {
               />
               <CiSearch className="absolute top-2.5 left-1 transform text-xl font-bold text-gray-500" />
             </div>
-            <button className="flex items-center gap-2 rounded-xl bg-blue-500 p-2 text-white">
+            <button
+              className="flex cursor-pointer items-center gap-2 rounded-xl bg-blue-500 p-2 text-white"
+              onClick={handleAddNewChild} 
+            >
               <FaPlus />
               Thêm mới
             </button>
@@ -83,7 +97,7 @@ const HomePage = () => {
               </button>
               <button className="flex items-center gap-2">
                 <SlNote />
-                Chỉnh sữa
+                Chỉnh sửa
               </button>
             </div>
           </div>
@@ -112,7 +126,7 @@ const HomePage = () => {
               </button>
               <button className="flex items-center gap-2">
                 <SlNote />
-                Chỉnh sữa
+                Chỉnh sửa
               </button>
             </div>
           </div>
@@ -141,7 +155,7 @@ const HomePage = () => {
               </button>
               <button className="flex items-center gap-2">
                 <SlNote />
-                Chỉnh sữa
+                Chỉnh sửa
               </button>
             </div>
           </div>
@@ -180,7 +194,7 @@ const HomePage = () => {
               </label>
               <textarea
                 type="text"
-                className="w-full min-h-28 resize-none rounded-lg border border-gray-300 p-2"
+                className="min-h-28 w-full resize-none rounded-lg border border-gray-300 p-2"
                 id="vanDe"
               />
             </div>
@@ -271,4 +285,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default HomePageCus;

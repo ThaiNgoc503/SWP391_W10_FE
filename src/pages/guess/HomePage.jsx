@@ -14,7 +14,7 @@ import { TiTick } from "react-icons/ti";
 const HomePage = () => {
   return (
     <div className="mt-2">
-      <div className="bg-sky-100 px-15 py-5">
+      <div className="bg-blue-100/50 px-[4em] py-[1.5em]">
         <ul className="grid grid-cols-2 items-center text-gray-600">
           <li className="space-y-10 text-lg">
             <p className="text-3xl font-bold">
@@ -37,7 +37,7 @@ const HomePage = () => {
         </ul>
       </div>
 
-      <div className="px-15 py-25">
+      <div className="px-[4em] py-[8em]">
         <ul className="grid grid-cols-2">
           <li className="space-y-10">
             <p className="text-2xl font-bold">
@@ -50,7 +50,7 @@ const HomePage = () => {
               </p>
               <p className="flex items-center gap-2">
                 <FaChartBar className="text-blue-500" />
-                Biểu đồ tăng trưởng trực quan, dễ hiểu{" "}
+                Biểu đồ tăng trưởng trực quan, dễ hiểu
               </p>
               <p className="flex items-center gap-2">
                 <PiBellSimpleZFill className="text-blue-500" />
@@ -81,10 +81,10 @@ const HomePage = () => {
       {/* GÓI THÀNH VIÊN */}
       <div className="p-10 text-center">
         <p className="p-10 text-2xl font-bold">Gói thành viên</p>
-        <div className="grid grid-cols-2 gap-3 px-1">
+        <div className="grid grid-cols-2 gap-[1em] px-1">
           {/* GÓI STANDARD */}
-          <div className="space-y-7 rounded-2xl border border-gray-300/25 px-[3em] pt-[2em] pb-[3em] text-xl shadow-xl">
-            <div className="space-y-3.75">
+          <div className="space-y-7 rounded-xl border border-gray-300/25 px-[3em] pt-[2em] pb-[3em] text-xl shadow-xl">
+            <div className="space-y-[1em]">
               <p className="text-2xl font-bold">Gói standard</p>
               <p>
                 <b className="text-2xl text-blue-500">599.000</b>/năm
@@ -113,7 +113,7 @@ const HomePage = () => {
 
           {/* GÓI VIP */}
           <div className="space-y-7 rounded-2xl border bg-gradient-to-r from-purple-700 via-purple-500 to-blue-500 px-[3em] pt-[2em] pb-[3em] text-xl text-white shadow-xl">
-            <div className="space-y-2">
+            <div className="space-y-3">
               <p className="text-2xl font-bold">Gói Vip</p>
               <p>
                 <b className="text-2xl">999.000</b>/năm
@@ -124,19 +124,19 @@ const HomePage = () => {
               </p>
               <p className="flex items-center gap-2">
                 <TiTick className="text-green-500" />
-                Gửi yêu cầu tư vấn đến bác sĩ{" "}
+                Gửi yêu cầu tư vấn đến bác sĩ
               </p>
               <p className="flex items-center gap-2">
                 <TiTick className="text-green-500" />
-                Tư vấn trực tuyến 1:1 với bác sĩ qua Google Meet{" "}
+                Tư vấn trực tuyến 1:1 với bác sĩ 
               </p>
               <p className="flex items-center gap-2">
                 <TiTick className="text-green-500" />
-                Nhận lời khuyên chuyên sâu từ bác sĩ{" "}
+                Nhận lời khuyên chuyên sâu từ bác sĩ
               </p>
               <p className="flex items-center gap-2">
                 <TiTick className="text-green-500" />
-                Hỗ trợ ưu tiên 24/7{" "}
+                Hỗ trợ ưu tiên 24/7
               </p>
             </div>
             <button className="w-full rounded-lg bg-white px-4 py-3 text-blue-500">

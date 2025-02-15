@@ -1,284 +1,129 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import hinh2 from "../../assets/hinh2.png";
-import hinh4 from "../../assets/hinh4.png";
-import {
-  FaArrowRight,
-  FaChartBar,
-  FaChartLine,
-  FaEye,
-  FaPlus,
-  FaShareAlt,
-} from "react-icons/fa";
-import { MdGroups3 } from "react-icons/md";
-import { FaUserDoctor } from "react-icons/fa6";
-import { PiBellSimpleZFill } from "react-icons/pi";
-import { TiTick } from "react-icons/ti";
+import { FaArrowRight, FaEye, FaPlus } from "react-icons/fa";
 import { SlNote } from "react-icons/sl";
 import { CiSearch } from "react-icons/ci";
 import { GrUpdate } from "react-icons/gr";
+import hinh4 from "../../assets/hinh4.png";
 
 const HomePageCus = () => {
   const navigate = useNavigate();
 
-  const handleAddNewChild = () => {
-    console.log("Navigating..");
-
-    navigate("/customer/addNewChild");
-  };
+  const handleAddNewChild = () => navigate("/customer/addNewChild");
 
   return (
     <div className="mt-2">
-      <div className="bg-sky-100 px-15 py-5">
-        <ul className="grid grid-cols-2 items-center text-gray-600">
-          <li className="space-y-10 text-lg">
-            <p className="text-3xl font-bold">
-              Chào mừng bạn đã đến với GrowthTrack, chúng tôi cung cấp các công
-              cụ tốt nhất để theo dõi sự phát triển của trẻ
-            </p>
-            <p className="">
+      {/* Header Section */}
+      <div className="bg-blue-100/50 px-6 py-10 md:px-16">
+        <div className="grid grid-cols-1  items-center gap-10 md:grid-cols-2">
+          <div>
+            <h1 className="text-3xl font-bold">
+              Chào mừng bạn đến với GrowthTrack
+            </h1>
+            <p className="mt-4 text-gray-700">
               Chúng tôi cung cấp công cụ dễ dàng để bạn ghi nhận, phân tích và
               chia sẻ sự phát triển của trẻ từ sơ sinh đến trưởng thành.
             </p>
-          </li>
-          <li>
-            <figure>
-              <img src={hinh4} alt="" className="h-[495px] w-[420px]" />
-            </figure>
-          </li>
-        </ul>
+          </div>
+          <img src={hinh4} alt="GrowthTrack" className="mx-auto h-80 w-auto" />
+        </div>
       </div>
 
-      <div className="px-15 py-25">
-        <div className="flex justify-between">
-          <p className="text-2xl font-bold">Danh sách trẻ</p>
-          <div className="flex items-center">
+      {/* Child List Section */}
+      <div className="px-6 py-10 md:px-16">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <h2 className="text-2xl font-bold">Danh sách trẻ</h2>
+          <div className="flex items-center gap-4">
             <div className="relative w-56">
               <input
                 type="text"
-                value=""
-                placeholder="tìm kiếm..."
-                className="rounded-sm border-1 border-gray-300 p-1.5 pl-7"
+                placeholder="Tìm kiếm..."
+                className="w-full rounded border border-gray-300 py-2 pl-8 pr-2 text-gray-700"
               />
-              <CiSearch className="absolute top-2.5 left-1 transform text-xl font-bold text-gray-500" />
+              <CiSearch className="absolute left-2 top-1/2 -translate-y-1/2 transform text-xl text-gray-500" />
             </div>
             <button
-              className="flex cursor-pointer items-center gap-2 rounded-xl bg-blue-500 p-2 text-white"
-              onClick={handleAddNewChild} 
+              className="flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+              onClick={handleAddNewChild}
             >
-              <FaPlus />
-              Thêm mới
+              <FaPlus /> Thêm mới
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-5 pt-10">
-          {/* Thẻ 1 */}
-          <div className="w-[23em] border border-gray-300/25 p-3 shadow-sm">
-            <ul className="flex gap-5">
-              <li>
-                <figure>
-                  <img
-                    className="h-15 w-15 rounded-full"
-                    src="https://images.unsplash.com/photo-1738071545459-e19435ae37e0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                  />
-                </figure>
-              </li>
-              <li>
-                <p className="font-bold">Nguyễn Thị A</p>
-                <p>9 tháng tuổi</p>
-              </li>
-            </ul>
-            <div className="flex justify-between">
-              <button className="flex items-center gap-2 text-blue-500">
-                <FaEye />
-                Xem chi tiết
-              </button>
-              <button className="flex items-center gap-2">
-                <SlNote />
-                Chỉnh sửa
-              </button>
-            </div>
-          </div>
 
-          {/* Thẻ 2 */}
-          <div className="w-[23em] border border-gray-300/25 p-3 shadow-sm">
-            <ul className="flex gap-5">
-              <li>
-                <figure>
-                  <img
-                    className="h-15 w-15 rounded-full"
-                    src="https://images.unsplash.com/photo-1738071545459-e19435ae37e0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                  />
-                </figure>
-              </li>
-              <li>
-                <p className="font-bold">Nguyễn Thị A</p>
-                <p>9 tháng tuổi</p>
-              </li>
-            </ul>
-            <div className="flex justify-between">
-              <button className="flex items-center gap-2 text-blue-500">
-                <FaEye />
-                Xem chi tiết
-              </button>
-              <button className="flex items-center gap-2">
-                <SlNote />
-                Chỉnh sửa
-              </button>
+        <div className="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+          {[1, 2, 3].map((child) => (
+            <div
+              key={child}
+              className="rounded-lg border border-gray-300 p-4 shadow-md"
+            >
+              <div className="flex items-center gap-4">
+                <img
+                  className="h-16 w-16 rounded-full"
+                  src="https://images.unsplash.com/photo-1738071545459-e19435ae37e0?q=80&w=200&h=200&fit=crop"
+                  alt="child"
+                />
+                <div>
+                  <p className="font-bold">Nguyễn Thị A</p>
+                  <p>9 tháng tuổi</p>
+                </div>
+              </div>
+              <div className="flex justify-between pt-3">
+                <Link
+                  to="/customer/child-records"
+                  className="flex items-center gap-2 text-blue-500 hover:underline"
+                >
+                  <FaEye /> Xem chi tiết
+                </Link>
+                <button className="flex items-center gap-2 text-gray-700 hover:text-gray-900">
+                  <SlNote /> Chỉnh sửa
+                </button>
+              </div>
             </div>
-          </div>
-
-          {/* Thẻ 3 */}
-          <div className="w-[23em] border border-gray-300/25 p-3 shadow-sm">
-            <ul className="flex gap-5">
-              <li>
-                <figure>
-                  <img
-                    className="h-15 w-15 rounded-full"
-                    src="https://images.unsplash.com/photo-1738071545459-e19435ae37e0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                  />
-                </figure>
-              </li>
-              <li>
-                <p className="font-bold">Nguyễn Thị A</p>
-                <p>9 tháng tuổi</p>
-              </li>
-            </ul>
-            <div className="flex justify-between">
-              <button className="flex items-center gap-2 text-blue-500">
-                <FaEye />
-                Xem chi tiết
-              </button>
-              <button className="flex items-center gap-2">
-                <SlNote />
-                Chỉnh sửa
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      {/* GÓI THÀNH VIÊN */}
+      {/* Advisory Section */}
       <div className="p-10 text-center">
-        <div className="inline-flex items-center gap-20 pb-10">
-          <p className="text-2xl font-bold">Yêu câu tư vấn</p>
-          <button className="flex items-center gap-2 rounded-xl bg-blue-500 p-2 text-white">
-            <GrUpdate />
-            Lịch sử tư vấn
+        <div className="flex flex-col items-center justify-center gap-6 pb-6 md:flex-row">
+          <h2 className="text-2xl font-bold">Yêu cầu tư vấn</h2>
+          <Link
+            to="/customer/advisory"
+            className="flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+          >
+            <GrUpdate /> Lịch sử tư vấn
+          </Link>
+        </div>
+        <div className="mx-auto max-w-lg rounded-lg bg-white p-6 shadow-lg">
+          <label className="mb-2 block font-medium">Bác sĩ</label>
+          <select className="w-full rounded border border-gray-300 px-3 py-2">
+            <option>Bs. Nguyễn Văn A</option>
+            <option>Bs. Nguyễn Văn B</option>
+          </select>
+          <label className="mb-2 mt-4 block font-medium">Mô tả vấn đề</label>
+          <textarea className="min-h-28 w-full resize-none rounded border border-gray-300 px-3 py-2"></textarea>
+          <button className="mt-4 w-full rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+            Gửi yêu cầu
           </button>
         </div>
-
-        <div className="">
-          {/* GÓI STANDARD */}
-          <div className="space-y-7 rounded-2xl border border-gray-300/25 px-[3em] pt-[2em] pb-[3em] text-xl shadow-xl">
-            <div className="space-y-3.75">
-              <label htmlFor="bacSi" className="flex items-center gap-2">
-                Bác sĩ
-              </label>
-              <select
-                type="text"
-                className="w-full rounded-lg border border-gray-300 p-2"
-                id="bacSi"
-              >
-                <option value="Bs. Nguyen Van A">Bs. Nguyen Van A</option>
-                <option value="Bs. Nguyen Van B">Bs. Nguyen Van B</option>
-                <option value="Bs. Nguyen Van C">Bs. Nguyen Van C</option>
-                <option value="Bs. Nguyen Van D">Bs. Nguyen Van D</option>
-              </select>
-              <label htmlFor="vanDe" className="flex items-center gap-2">
-                Mô tả vấn đề
-              </label>
-              <textarea
-                type="text"
-                className="min-h-28 w-full resize-none rounded-lg border border-gray-300 p-2"
-                id="vanDe"
-              />
-            </div>
-            <button className="w-full rounded-lg bg-blue-500 px-4 py-3 text-white">
-              Gửi yêu cầu
-            </button>
-          </div>
-        </div>
       </div>
 
-      {/* BLOG CHIA SẼ KINH NGHIỆM */}
-      <div className="p-10">
-        <p className="p-10 text-center text-2xl font-bold">
-          Blog chia sẽ kinh nghiệm
-        </p>
-        <div className="grid grid-cols-3 gap-3">
-          {/* BLOG 1 */}
-
-          <div className="w-[20rem]">
-            <figure>
-              <img
-                src="https://images.unsplash.com/photo-1739467444239-840b9b3c2480?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                className="rounded-xl"
-              />
-              <p className="p-2 text-xl font-bold">
-                5 cách giúp trẻ ngủ ngon hơn
-              </p>
-              <button className="flex items-center gap-2 pl-2 text-blue-500">
-                xem thêm
-                <FaArrowRight className="font-xl" />
-              </button>
-            </figure>
-          </div>
-          {/* BLOG 2 */}
-
-          <div className="w-[20rem]">
-            <figure>
-              <img
-                src="https://images.unsplash.com/photo-1739467444239-840b9b3c2480?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                className="rounded-xl"
-              />
-              <p className="p-2 text-xl font-bold">
-                5 cách giúp trẻ ngủ ngon hơn
-              </p>
-              <button className="flex items-center gap-2 pl-2 text-blue-500">
-                xem thêm
-                <FaArrowRight className="font-xl" />
-              </button>
-            </figure>
-          </div>
-          {/* BLOG 3 */}
-          <div className="w-[20rem]">
-            <figure>
-              <img
-                src="https://images.unsplash.com/photo-1739467444239-840b9b3c2480?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                className="rounded-xl"
-              />
-              <p className="p-2 text-xl font-bold">
-                5 cách giúp trẻ ngủ ngon hơn
-              </p>
-              <button className="flex items-center gap-2 pl-2 text-blue-500">
-                xem thêm
-                <FaArrowRight className="font-xl" />
-              </button>
-            </figure>
-          </div>
-        </div>
-      </div>
-      {/* CÂU HỎI HAY GẶP */}
+      {/* FAQ Section */}
       <div className="p-10 text-center">
-        <p className="p-10 text-2xl font-bold">Câu hỏi thường gặp</p>
-        <div className="space-y-5">
-          <div className="border border-gray-400/25 p-2 shadow-sm">
-            <button>Làm sao để đăng ký gói thành viên?</button>
-          </div>
-          <div className="border border-gray-400/25 p-2 shadow-sm">
-            <button>Làm sao để đăng ký gói thành viên?</button>
-          </div>
-          <div className="border border-gray-400/25 p-2 shadow-sm">
-            <button>Làm sao để đăng ký gói thành viên?</button>
-          </div>
+        <h2 className="mb-6 text-2xl font-bold">Câu hỏi thường gặp</h2>
+        <div className="space-y-4">
+          {Array(3)
+            .fill("Làm sao để đăng ký gói thành viên?")
+            .map((question, index) => (
+              <div
+                key={index}
+                className="cursor-pointer rounded-lg border border-gray-300 p-3 shadow-sm hover:bg-gray-100"
+              >
+                {question}
+              </div>
+            ))}
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ import AddNewChild from "./pages/customer/AddNewChild";
 import AddRecords from "./pages/customer/AddRecords";
 import ChartOfChild from "./pages/customer/ChartOfChild";
 import BookingDoctor from "./pages/customer/BookingDoctor";
+import BookingHistory from "./pages/customer/BookingHistory";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="chart" element={<ChartOfChild />} />
           <Route path="addNewChild" element={<AddNewChild />} />
           <Route path="bookingDoctor" element={<BookingDoctor />} />
+          <Route path="bookingHistory" element={<BookingHistory />} />
         </Route>
       </Routes>
     </BrowserRouter>

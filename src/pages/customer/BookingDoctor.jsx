@@ -34,9 +34,11 @@ const BookingDoctor = () => {
           </p>
         </div>
         <div className="ml-[70%] mt-[3%] h-[8%] w-[20%]">
-          <Button className="size-full" color="light-green">
-            Lịch sử khám bệnh
-          </Button>
+          <Link to={"../bookingHistory"}>
+            <Button className="size-full" color="light-green">
+              Lịch sử khám bệnh
+            </Button>
+          </Link>
         </div>
         <div className="ml-[20%] mt-[3%] h-fit w-[70%] rounded-2xl bg-white shadow-xl">
           <div className="mx-8 my-5 flex flex-col">
@@ -128,7 +130,10 @@ const BookingDoctor = () => {
                   </p>
                 </DialogBody>
                 <DialogFooter className="flex flex-col items-center justify-center gap-6">
-                  <Link to={"../bookingHistory"} className="flex w-full justify-center">
+                  <Link
+                    to={"../bookingHistory"}
+                    className="flex w-full justify-center"
+                  >
                     <Button className="w-[70%] bg-deep-purple-300 py-6 text-black">
                       Xem lịch khám
                     </Button>

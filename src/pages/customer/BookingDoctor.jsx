@@ -1,4 +1,4 @@
-import { Button, Select, Option, ButtonGroup } from "@material-tailwind/react";
+import { Button, Select, Option, ButtonGroup, Dialog, DialogHeader, DialogBody, DialogFooter } from "@material-tailwind/react";
 import React, { useState } from "react";
 
 const BookingDoctor = () => {
@@ -10,6 +10,10 @@ const BookingDoctor = () => {
   const handlePickTime = (day) => {
     setPickTime(day);
   };
+  const [isOpen, setIsOpen] = React.useState(false);
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  }
 
   return (
     <>
@@ -78,9 +82,65 @@ const BookingDoctor = () => {
               </div>
             </div>
             <div className="mt-16 flex w-[100%] justify-center">
-              <Button className="h-[20%] w-[40%] bg-light-blue-600 text-xl">
+              <Button
+                className="h-[20%] w-[40%] bg-light-blue-600 text-xl"
+                onClick={handleOpen}
+              >
                 Xác nhận đặt lịch
               </Button>
+              <Dialog
+                open={isOpen}
+                handler={handleOpen}
+                className="flex flex-col"
+              >
+                <DialogHeader className="mt-6 flex justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-[20%] rounded-full bg-light-green-500 text-white"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                </DialogHeader>
+                <DialogBody className="flex flex-col items-center justify-center">
+                  <p className="text-3xl font-bold text-black">
+                    Đặt lịch thành công!
+                  </p>
+                  <p className="text-lg text-gray-700">
+                    Cám ơn bạn đã đặt lịch hẹn
+                  </p>
+                </DialogBody>
+                <DialogFooter className="flex flex-col items-center justify-center gap-6">
+                  <Button className="w-[70%] bg-deep-purple-300 py-6 text-black">
+                    Xem lịch khám
+                  </Button>
+                  <Button className="flex justify-center items-center mb-6 w-[70%] bg-white py-4 text-black"
+                  variant="outlined">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                      />
+                    </svg>
+                    Về trang chủ
+                  </Button>
+                </DialogFooter>
+              </Dialog>
             </div>
           </div>
         </div>

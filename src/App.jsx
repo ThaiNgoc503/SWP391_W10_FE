@@ -32,6 +32,11 @@ function App() {
           <Route path="bookingDoctor" element={<BookingDoctor />} />
           <Route path="bookingHistory" element={<BookingHistory />} />
         </Route>
+        <Route path="/doctor" element={<LayoutDoctor />}>
+          <Route path="answer-consult" element={<AnswerConsultRequest/>} />
+          <Route path="reponse-consult" element={<ConsultResponse/>} />
+          <Route path="consult-answered" element={<ConsultAnswered/>}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   );

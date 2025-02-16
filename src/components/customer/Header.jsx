@@ -26,10 +26,10 @@ const Header = () => {
             Trang chủ
           </Link>
           <Link to={"/customer"} className="transition hover:text-blue-500">
-            Blog
+            Danh sách bác sĩsĩ
           </Link>
-          <Link to={"/customer"} className="transition hover:text-blue-500">
-            Câu hỏi thường gặp
+          <Link to={"bookingDoctor"} className="transition hover:text-blue-500">
+            Đặt Lịch khám
           </Link>
         </nav>
 

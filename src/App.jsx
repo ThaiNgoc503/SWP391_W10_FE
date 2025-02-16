@@ -12,6 +12,9 @@ import AddRecords from "./pages/customer/AddRecords";
 import ChartOfChild from "./pages/customer/ChartOfChild";
 import BookingDoctor from "./pages/customer/BookingDoctor";
 import BookingHistory from "./pages/customer/BookingHistory";
+import LayoutDoctor from "./layout/LayoutDoctor";
+import AnswerConsultRequest from "./pages/doctor/RequestAnswerConsult";
+import ConsultResponse from "./pages/doctor/ConsultResponse";
 
 function App() {
   return (
@@ -33,7 +36,7 @@ function App() {
           <Route path="bookingHistory" element={<BookingHistory />} />
         </Route>
         <Route path="/doctor" element={<LayoutDoctor />}>
-          <Route path="answer-consult" element={<AnswerConsultRequest/>} />
+          <Route path="answer-consult" element={<RequestAnswerConsult/>} />
           <Route path="reponse-consult" element={<ConsultResponse/>} />
           <Route path="consult-answered" element={<ConsultAnswered/>}/>
         </Route>

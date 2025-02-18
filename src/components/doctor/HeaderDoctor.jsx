@@ -4,7 +4,7 @@ import { FaUserAstronaut } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router";
 
-const Header = () => {
+const HeaderDoctor = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -12,7 +12,7 @@ const Header = () => {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <Link to={"/customer"}>
+          <Link to={"/doctor"}>
             <figure className="w-16">
               <img src={Logo} alt="Logo" />
             </figure>
@@ -22,14 +22,14 @@ const Header = () => {
 
         {/* Menu Desktop */}
         <nav className="hidden gap-6 text-lg md:flex">
-          <Link to={"/customer"} className="transition hover:text-blue-500">
+          <Link to={"/doctor/"} className="transition hover:text-blue-500">
             Danh sách tư vấn
           </Link>
-          <Link to={"/customer"} className="transition hover:text-blue-500">
-            Lịch khám bệnh
+          <Link to={"/doctor/all-appointments"} className="transition hover:text-blue-500">
+            Danh sách Khám bệnh
           </Link>
-          <Link to={"/customer"} className="transition hover:text-blue-500">
-            Blog
+          <Link to={"/doctor"} className="transition hover:text-blue-500">
+            Blog{" "}
           </Link>
         </nav>
 
@@ -53,22 +53,22 @@ const Header = () => {
       {isOpen && (
         <div className="mt-3 space-y-3 text-lg md:hidden">
           <Link
-            to={"/customer"}
+            to={"/doctor"}
             className="block rounded-md p-2 hover:bg-gray-100"
           >
-            Trang chủ
+            Danh sách tư vấn
           </Link>
           <Link
-            to={"/customer"}
+            to={"/doctor/all-appointments"}
+            className="block rounded-md p-2 hover:bg-gray-100"
+          >
+            Danh sách khám bệnh
+          </Link>
+          <Link
+            to={"/doctor"}
             className="block rounded-md p-2 hover:bg-gray-100"
           >
             Blog
-          </Link>
-          <Link
-            to={"/customer"}
-            className="block rounded-md p-2 hover:bg-gray-100"
-          >
-            Câu hỏi thường gặp
           </Link>
           <div className="mt-3 flex justify-center">
             <button className="rounded-full border border-blue-500 p-2 text-blue-500 hover:bg-blue-100">
@@ -81,4 +81,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderDoctor;

@@ -34,9 +34,11 @@ const Header = () => {
 
         {/* Buttons */}
         <div className="hidden gap-4 md:flex">
-          <button className="rounded-lg border border-blue-500 px-4 py-2 text-blue-500 transition hover:bg-blue-100">
-            Đăng nhập
-          </button>
+          <Link to={"/login"}>
+            <button className="rounded-lg border border-blue-500 px-4 py-2 text-blue-500 transition hover:bg-blue-100">
+              Đăng nhập
+            </button>
+          </Link>
           <button className="rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-600">
             Đăng ký
           </button>

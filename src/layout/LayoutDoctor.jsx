@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../components/doctor/Header";
 import { Outlet } from "react-router";
+import HeaderDoctor from "../components/doctor/HeaderDoctor";
 
 const LayoutDoctor = () => {
   return (
     <div>
-      <Header />
+      <HeaderDoctor />
       <Outlet />
     </div>
   );

@@ -6,6 +6,7 @@ import { SlNote } from "react-icons/sl";
 import { CiSearch } from "react-icons/ci";
 import { GrUpdate } from "react-icons/gr";
 import hinh4 from "../../assets/hinh4.png";
+import { IoIosMan } from "react-icons/io";
 
 const HomePageCus = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const HomePageCus = () => {
     <div className="mt-2">
       {/* Header Section */}
       <div className="bg-blue-100/50 px-6 py-10 md:px-16">
-        <div className="grid grid-cols-1  items-center gap-10 md:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
           <div>
             <h1 className="text-3xl font-bold">
               Chào mừng bạn đến với GrowthTrack
@@ -66,7 +67,8 @@ const HomePageCus = () => {
                 />
                 <div>
                   <p className="font-bold">Nguyễn Thị A</p>
-                  <p>9 tháng tuổi</p>
+                  <p>Nam</p>
+                  <p>05-07-2024</p>
                 </div>
               </div>
               <div className="flex justify-between pt-3">
@@ -76,9 +78,11 @@ const HomePageCus = () => {
                 >
                   <FaEye /> Xem chi tiết
                 </Link>
-                <button className="flex items-center gap-2 text-gray-700 hover:text-gray-900">
-                  <SlNote /> Chỉnh sửa
-                </button>
+                <Link to={"/customer/update-child"}>
+                  <button className="flex items-center gap-2 text-gray-700 hover:text-gray-900">
+                    <SlNote /> Chỉnh sửa
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -104,9 +108,11 @@ const HomePageCus = () => {
           </select>
           <label className="mb-2 mt-4 block font-medium">Mô tả vấn đề</label>
           <textarea className="min-h-28 w-full resize-none rounded border border-gray-300 px-3 py-2"></textarea>
-          <button className="mt-4 w-full rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
-            Gửi yêu cầu
-          </button>
+          <Link to={"/customer/request-success"}>
+            <button className="mt-4 w-full rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+              Gửi yêu cầu
+            </button>
+          </Link>
         </div>
       </div>
 

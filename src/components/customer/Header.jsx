@@ -35,9 +35,11 @@ const Header = () => {
 
         {/* User Icon */}
         <div className="hidden md:flex">
-          <button className="rounded-full border border-blue-500 p-2 text-blue-500 hover:bg-blue-100">
-            <FaUserAstronaut className="h-6 w-6" />
-          </button>
+          <Link to={"/doctor"}>
+            <button className="rounded-full border border-blue-500 p-2 text-blue-500 hover:bg-blue-100">
+              <FaUserAstronaut className="h-6 w-6" />
+            </button>
+          </Link>
         </div>
 
         {/* Hamburger Menu Button */}
@@ -71,9 +73,11 @@ const Header = () => {
             Câu hỏi thường gặp
           </Link>
           <div className="mt-3 flex justify-center">
-            <button className="rounded-full border border-blue-500 p-2 text-blue-500 hover:bg-blue-100">
-              <FaUserAstronaut className="h-6 w-6" />
-            </button>
+            <Link to={"/doctor"}>
+              <button className="rounded-full border border-blue-500 p-2 text-blue-500 hover:bg-blue-100">
+                <FaUserAstronaut className="h-6 w-6" />
+              </button>
+            </Link>
           </div>
         </div>
       )}

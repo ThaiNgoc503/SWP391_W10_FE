@@ -7,9 +7,9 @@ const FormRequestAdvisory = () => {
       <div className="mx-auto max-w-lg rounded-lg bg-white p-6 shadow-md">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-xl font-semibold">Thông tin cá nhân</h2>
-          <button className="rounded-md bg-yellow-300 px-3 py-1 font-semibold text-black">
+          <Link to={"/doctor/chart"}><button className="rounded-md bg-yellow-300 px-3 py-1 font-semibold text-black">
             Charts
-          </button>
+          </button></Link>
         </div>
 
         <div className="mb-4">

@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { FaGear } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const RequestAdvisory = () => {
   const [activeTab, setActiveTab] = useState("processing");
+  const [updateStatus, setUpdateStatus] = useState(false);
 
   const requests = [
     { name: "Nguyễn Văn A", date: "13-01-2025", status: "Đang xử lý" },
@@ -56,15 +58,34 @@ const RequestAdvisory = () => {
               <p className="font-semibold">{req.name}</p>
               <p className="text-gray-600">Ngày yêu cầu: {req.date}</p>
             </div>
-            {req.status === "Đã xử lý" ? (
-              <Link to={"/doctor/result-advisory"}>
-                <span className="rounded-md bg-yellow-200 px-5 py-1 text-sm font-semibold text-gray-700">
-                  {req.status}
-                </span>
-              </Link>
+            {req.status === "Đang xử lý" ? (
+              <div>
+                <Link to={"/doctor/result-advisory"}>
+                  <span className="rounded-md bg-yellow-200 px-5 py-1 text-sm font-semibold text-gray-700">
+                    {req.status}
+                  </span>
+                </Link>
+                <button
+                  className="pl-3 pt-4"
+                  onClick={() => setUpdateStatus(!updateStatus)}
+                >
+                  <FaGear />
+                </button>
+                {updateStatus ? (
+                  <div className="absolute right-5">
+                    <div>
+                      <button className="rounded bg-blue-100 p-2 text-white">
+                        Đã Tư vấn
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
             ) : (
               <Link to={"/doctor/request-form"}>
-                <span className="rounded-md bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700">
+                <span className="rounded-md bg-gray-200 px-7 mr-6 py-1 text-sm font-semibold text-gray-700">
                   {req.status}
                 </span>
               </Link>

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaGear } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const AllAppointments = () => {
+  const [updateStatus, setUpdateStatus] = useState(false);
   const appointments = [
     {
       name: "Nguyễn Văn A",
@@ -78,15 +80,37 @@ const AllAppointments = () => {
                 </td>
                 <td className="p-3">{appt.pin}</td>
                 <td className="p-3">
-                  <button
-                    className={`rounded-lg px-4 py-1 ${
-                      appt.status === "Chờ khám"
-                        ? "w-[9em] bg-gray-200 text-gray-600"
-                        : "w-[9em] bg-blue-500 text-white"
-                    }`}
-                  >
-                    {appt.status}
-                  </button>
+                  {appt.status === "Chờ khám" ? (
+                    <div className="relative">
+                      <Link to={"/doctor/request-form"}>
+                        <button
+                          className={`rounded-lg px-4 py-1 ${
+                            appt.status === "Chờ khám"
+                              ? "w-[9em] bg-gray-200 text-gray-600"
+                              : "w-[9em] bg-blue-500 text-white"
+                          }`}
+                        >
+                          {appt.status}
+                        </button>
+                      </Link>
+                      <button className="pl-3 pt-4" onClick={() => setUpdateStatus(!updateStatus)}>
+                        <FaGear />
+                      </button>
+                      {updateStatus ? <div className="absolute right-5"><div><button  className="rounded text-white bg-blue-100 p-2">Đã khám</button></div></div> : ""}
+                    </div>
+                  ) : (
+                    <Link to={"/doctor/result-advisory"}>
+                      <button
+                        className={`rounded-lg px-4 py-1 ${
+                          appt.status === "Chờ khám"
+                            ? "w-[9em] bg-gray-200 text-gray-600"
+                            : "w-[9em] bg-blue-500 text-white"
+                        }`}
+                      >
+                        {appt.status}
+                      </button>
+                    </Link>
+                  )}
                 </td>
               </tr>
             ))}

@@ -51,9 +51,9 @@ const Login = () => {
 
           <p className="mt-4 text-center text-sm text-gray-600">
             Chưa có tài khoản?{" "}
-            <a href="#" className="text-blue-500 hover:underline">
+            <Link to={"/register"} className="text-blue-500 hover:underline">
               Đăng ký ngay
-            </a>
+            </Link>
           </p>
         </div>
 

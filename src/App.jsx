@@ -19,6 +19,10 @@ import Login from "./pages/guess/Login";
 import SetCalendar from "./pages/doctor/SetCalendar";
 import RequestAdvisory from "./pages/doctor/RequestAdvisory";
 import FormRequestAdvisory from "./pages/doctor/FormRequestAdvisory";
+import UpdateChild from "./pages/customer/UpdateChild";
+import RequestAdvisorySuccess from "./pages/customer/RequestAdvisorySuccess";
+import BookingResult from "./pages/customer/BookingResult";
+import Register from "./pages/guess/Register";
 function App() {
   return (
     <BrowserRouter>
@@ -26,6 +30,7 @@ function App() {
         <Route path="/" element={<LayoutGuess />}>
           <Route index element={<HomePage />} />
           <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
         </Route>
 
         <Route path="/customer" element={<LayoutCustomer />}>
@@ -38,7 +43,14 @@ function App() {
           <Route path="addNewChild" element={<AddNewChild />} />
           <Route path="bookingDoctor" element={<BookingDoctor />} />
           <Route path="bookingHistory" element={<BookingHistory />} />
+          <Route path="booking-result" element={<BookingResult />} />
+          <Route path="update-child" element={<UpdateChild />} />
+          <Route
+            path="request-success"
+            element={<RequestAdvisorySuccess />}
+          />
         </Route>
+
         <Route path="/doctor" element={<LayoutDoctor />}>
           <Route index element={<RequestAdvisory />} />
           <Route
@@ -49,6 +61,8 @@ function App() {
           <Route path="set-calendar" element={<SetCalendar />} />
           <Route path="request-form" element={<FormRequestAdvisory />} />
           <Route path="result-advisory" element={<ResultAdvisory />} />
+          <Route path="chart" element={<ChartOfChild />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

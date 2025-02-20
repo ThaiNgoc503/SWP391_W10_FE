@@ -25,7 +25,10 @@ const HeaderDoctor = () => {
           <Link to={"/doctor/"} className="transition hover:text-blue-500">
             Danh sách tư vấn
           </Link>
-          <Link to={"/doctor/all-appointments"} className="transition hover:text-blue-500">
+          <Link
+            to={"/doctor/all-appointments"}
+            className="transition hover:text-blue-500"
+          >
             Danh sách Khám bệnh
           </Link>
           <Link to={"/doctor"} className="transition hover:text-blue-500">
@@ -35,9 +38,11 @@ const HeaderDoctor = () => {
 
         {/* User Icon */}
         <div className="hidden md:flex">
-          <button className="rounded-full border border-blue-500 p-2 text-blue-500 hover:bg-blue-100">
-            <FaUserAstronaut className="h-6 w-6" />
-          </button>
+          <Link to={"/customer"}>
+            <button className="rounded-full border border-blue-500 p-2 text-blue-500 hover:bg-blue-100">
+              <FaUserAstronaut className="h-6 w-6" />
+            </button>
+          </Link>
         </div>
 
         {/* Hamburger Menu Button */}
@@ -71,9 +76,11 @@ const HeaderDoctor = () => {
             Blog
           </Link>
           <div className="mt-3 flex justify-center">
-            <button className="rounded-full border border-blue-500 p-2 text-blue-500 hover:bg-blue-100">
-              <FaUserAstronaut className="h-6 w-6" />
-            </button>
+            <Link to={"/customer"}>
+              <button className="rounded-full border border-blue-500 p-2 text-blue-500 hover:bg-blue-100">
+                <FaUserAstronaut className="h-6 w-6" />
+              </button>
+            </Link>
           </div>
         </div>
       )}

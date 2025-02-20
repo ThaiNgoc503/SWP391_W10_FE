@@ -61,7 +61,7 @@ const AdvisoryHistory = () => {
           </div>
           <div className="flex items-center gap-4">
             <div>
-              <p className="text-sm text-gray-600">Ngày phản hồi</p>
+              <p className="text-sm text-gray-600">Ngày gửi</p>
               <p className="font-semibold">15/3/2025</p>
             </div>
             <button className="flex w-40 items-center gap-2 rounded-full bg-yellow-200 px-3 py-1">

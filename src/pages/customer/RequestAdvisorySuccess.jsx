@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 
-const ResponseAdvisorySuccess = () => {
+const RequestAdvisorySuccess = () => {
   return (
     <div className="flex h-screen items-center justify-center bg-gray-100">
       <div className="max-w-xs rounded-2xl bg-white p-6 text-center shadow-lg">
@@ -22,10 +22,10 @@ const ResponseAdvisorySuccess = () => {
           </svg>
         </div>
         <h2 className="mt-4 text-xl font-semibold text-gray-900">
-          Gửi phản hồi thành công!
+          Gửi yêu cầu tư vấn thành công!
         </h2>
         <div className="flex flex-col gap-2 mt-5">
-          <Link to="/doctor/result-advisory">
+          <Link to="/customer/advisory">
             <button className="flex w-full items-center justify-center rounded-lg bg-gray-100 px-4 py-2 transition hover:bg-gray-200">
               <svg
                 className="mr-2 h-5 w-5 text-gray-600"
@@ -35,10 +35,10 @@ const ResponseAdvisorySuccess = () => {
               >
                 <path d="M10 15l-5.5 3 1.5-5.5L1 7.5l5.5-.5L10 2l2.5 5 5.5.5-4 4.5 1.5 5.5L10 15z" />
               </svg>
-              Xem phản hồi của tôi
+              Xem lịch sử tư vấn
             </button>
           </Link>
-          <Link to={"/doctor"}>
+          <Link to={"/customer"}>
             <button className="flex w-full items-center justify-center rounded-lg bg-gray-100 px-4 py-2 transition hover:bg-gray-200">
               <svg
                 className="mr-2 h-5 w-5 text-gray-600"
@@ -57,4 +57,4 @@ const ResponseAdvisorySuccess = () => {
   );
 };
 
-export default ResponseAdvisorySuccess;
+export default RequestAdvisorySuccess;
